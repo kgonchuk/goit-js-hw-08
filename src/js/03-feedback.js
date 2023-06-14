@@ -36,7 +36,7 @@ import throttle from "lodash.throttle";
 //           }
 //         }
 
-
+// -------------SECOND VARIANT-------------------
 
 const formEl = document.querySelector(".feedback-form");
 
@@ -44,6 +44,7 @@ formEl.addEventListener('input', onInputForm);
 formEl.addEventListener('submit', onSubmitForm);
 const LOCA_KEY = "feedback-form-state";
 const { email, message } = formEl.elements;
+popularInputSubmit()
 
 function onInputForm(evt){    
 dataValue = {email: email.value, message: message.value };
@@ -59,7 +60,7 @@ function onSubmitForm(evt){
     evt.currentTarget.reset()
 }
 function popularInputSubmit(evt){
-    let data = JSON.parse(localStorage.getItem(LOCA_KEY));
+    let data = JSON.parse(localStorage.getItem(LOCA_KEY)) || {};
     if(data){
         let {email, message} = formEl.elements;
         email.value = data.email || "";
