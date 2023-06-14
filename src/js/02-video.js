@@ -13,14 +13,15 @@ function onPlay (currentTime){
     player.on('timeupdate', throttle(onPlay, 1000));
 
 
-    const currentTime = Number(localStorage.getItem('videoplayer-current-time'));
+    const currentTime = Number(localStorage.getItem(CURRENT_TIME_KEY));
 
-    player.setCurrentTime(currentTime).then(function(seconds) {
-    }).catch(function(error) {
-        switch (error.name) {
-            case 'RangeError':
-                break;
-            default:
-                break;
-        }
-    });
+    player.setCurrentTime(currentTime);
+
+    // player.setCurrentTime(currentTime).then(function(seconds) {}).catch(function(error) {
+    //     switch (error.name) {
+    //         case 'RangeError':
+    //             break;
+    //         default:
+    //             break;
+    //     }
+    // });
