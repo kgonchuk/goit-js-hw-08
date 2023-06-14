@@ -61,8 +61,8 @@ function onSubmitForm(evt){
     evt.currentTarget.reset()
 }
 function popularInputSubmit(evt){
-    let data = JSON.parse(localStorage.getItem(LOCA_KEY)) || {};
-    if(data){
+    // let data = JSON.parse(localStorage.getItem(LOCA_KEY)) || {};
+    if(dataValue){
         let {email, message} = formEl.elements;
         email.value = data.email || "";
         message.value = data.message || "";
