@@ -43,6 +43,7 @@ const formEl = document.querySelector(".feedback-form");
 formEl.addEventListener('input', onInputForm);
 formEl.addEventListener('submit', onSubmitForm);
 const LOCA_KEY = "feedback-form-state";
+let dataValue = JSON.parse(localStorage.getItem(LOCA_KEY)) || {};
 const { email, message } = formEl.elements;
 popularInputSubmit()
 
